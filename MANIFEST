@@ -1,0 +1,11 @@
+bin/zip-extract
+Build.PL
+Changes
+ignore.txt
+lib/App/Zip/Extract.pm
+MANIFEST			This list of files
+README
+README.md
+t/00-load.t
+xt/manifest.t
+xt/pod.t

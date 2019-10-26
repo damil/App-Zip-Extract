@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+
+use lib "../lib";
+
+use App::Zip::Extract;
+App::Zip::Extract->run(@ARGV);
+
+
+__END__
+
+=head1 NAME
+
+zip-extract -- command-line utility to extract a member from a zip file (and optionally indent the XML). Meant to be used from Emacs for inspecting MsOffice files.
+
+=head1 SYNOPSIS
+
+  zip-extract -x <zip_archive_name> <member_name>
+  
+  #or in more verbose form
+  
+  zip-extract -xml_indent -zip <zip_archive_name> -member <member_name>
+
+=head1 DESCRIPTION
+
+This very simple utility extracts a single member from a ZIP archive and outputs its
+contents on standard output.
+
+With option C<-x> or C<-xml_indent>, XML contents is reformatted with 2-spaces indentation
+for each node.
+
+=head1 EMACS USAGE
+
+The motivation for writing this app was to be able to inspect MsOffice
+files from within Emacs on a Windows machine. The C<arc.el> module in
+Emacs knows how to list members of a ZIP file, but it needs an external
+"unzip" program to extract the contents of one particular member; besides,
+that unzipper must output its result on STDOUT so that it can be piped into Emacs.
+
+To tell Emacs to use this app, you must customize (C<ESC-x customize-variable>) the 
+variable C<archive-zip-extract>. Adding the C<-x> option is highly recommanded.
+
+=head1 AUTHOR
+
+
+
+
+=cut
+

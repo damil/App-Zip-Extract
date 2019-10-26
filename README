@@ -1,0 +1,36 @@
+App-Zip-Extract
+
+This is a command-line utility to extract a member from a zip file (and optionally indent the XML).
+Meant to be used from Emacs for inspecting MsOffice files.
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc App::Zip::Extract
+
+You can also look for information at:
+
+    Search CPAN
+        https://metacpan.org/release/App-Zip-Extract
+
+
+LICENSE AND COPYRIGHT
+
+This software is Copyright (c) 2019 by DAMI.
+
+This is free software, licensed under:
+
+  The Artistic License 2.0 (GPL Compatible)
+
