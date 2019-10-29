@@ -1,4 +1,4 @@
-package App::Zip::Extract;
+package App::Zip::X;
 
 use strict;
 use warnings;
@@ -43,7 +43,7 @@ sub run {
 }
 
 
-1; # End of App::Zip::Extract
+1; # End of App::Zip::X
 
 __END__
 
@@ -51,7 +51,7 @@ __END__
 
 =head1 NAME
 
-App::Zip::Extract - Extract a single member of a ZIP archive and print it on STDOUT
+App::Zip::X - Extract a single member of a ZIP archive, indent the XML, and print it on STDOUT
 
 =head1 VERSION
 
@@ -59,11 +59,11 @@ Version 1.0
 
 =head1 SYNOPSIS
 
-See L<zip-extract>
+See L<zip-x>
 
 =head1 DESCRIPTION
 
-See L<zip-extract>
+See L<zip-x>
 
 
 =head1 AUTHOR

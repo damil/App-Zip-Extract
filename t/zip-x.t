@@ -3,20 +3,20 @@ use warnings;
 use Test::More;
 
 use lib "../lib";
-use App::Zip::Extract;
+use App::Zip::X;
 
-diag( "Testing App::Zip::Extract $App::Zip::Extract::VERSION, Perl $], $^X" );
+diag( "Testing App::Zip::X $App::Zip::X::VERSION, Perl $], $^X" );
 
 
 # path to the docx file
-(my $docx = $0) =~ s[zip-extract\.t$][etc/zip-extract.docx];
+(my $docx = $0) =~ s[zip-x\.t$][etc/zip-x.docx];
 
 
 # run, capturing STDOUT
 close STDOUT;
 open STDOUT, ">", \my $capture_stdout
   or die "could not redirect STDOUT: $!" ;
-App::Zip::Extract->run("-x", -zip => $docx, -member => "word/document.xml");
+App::Zip::X->run("-x", -zip => $docx, -member => "word/document.xml");
 
 
 # just 3 very simple tests

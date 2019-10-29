@@ -1,12 +1,12 @@
-bin/zip-extract
+bin/zip-x
 Build.PL
 Changes
 ignore.txt
-lib/App/Zip/Extract.pm
+lib/App/Zip/X.pm
 MANIFEST			This list of files
 README
 README.md
-t/etc/zip-extract.docx
-t/zip-extract.t
+t/etc/zip-x.docx
+t/zip-x.t
 xt/manifest.t
 xt/pod.t

@@ -5,23 +5,23 @@ use strict;
 
 use lib "../lib";
 
-use App::Zip::Extract;
-App::Zip::Extract->run(@ARGV);
+use App::Zip::X;
+App::Zip::X->run(@ARGV);
 
 
 __END__
 
 =head1 NAME
 
-zip-extract -- command-line utility to extract a member from a zip file (and optionally indent the XML). Meant to be used from Emacs for inspecting MsOffice files.
+zip-x -- command-line utility to extract a member from a zip file (and optionally indent the XML). Meant to be used from Emacs for inspecting MsOffice files.
 
 =head1 SYNOPSIS
 
-  zip-extract -x <zip_archive_name> <member_name>
+  zip-x <zip_archive_name> <member_name>
   
   #or in more verbose form
   
-  zip-extract -xml_indent -zip <zip_archive_name> -member <member_name>
+  zip-x -xml_indent -zip <zip_archive_name> -member <member_name>
 
 =head1 DESCRIPTION
 
