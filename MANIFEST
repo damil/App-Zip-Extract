@@ -1,7 +1,6 @@
 bin/zip-x
 Build.PL
 Changes
-ignore.txt
 lib/App/Zip/X.pm
 MANIFEST			This list of files
 README
