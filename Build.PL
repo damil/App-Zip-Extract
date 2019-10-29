@@ -23,6 +23,11 @@ my $builder = Module::Build->new(
       'XML::LibXML'  => undef,
     },
     add_to_cleanup     => [ 'App-Zip-X-*' ],
+    meta_merge => {
+      resources => {
+        repository => 'https://github.com/damil/App-Zip-X',
+       }
+     },
 );
 
 $builder->create_build_script();
