@@ -7,14 +7,15 @@ use Getopt::Long    qw(GetOptionsFromArray);
 use Archive::Zip    qw(AZ_OK);
 use XML::LibXML;
 
-# integers to specify indentation modes -- see L<XML::LibXML>
-use constant XML_NO_INDENT     => 0;
-use constant XML_SIMPLE_INDENT => 1;
-
 our $VERSION = '1.0';
 
 
-sub run {
+# constant integers to specify indentation modes -- see L<XML::LibXML>
+use constant XML_NO_INDENT     => 0;
+use constant XML_SIMPLE_INDENT => 1;
+
+
+sub run { # no new() method -- this method both creates the instance and executes the request
   my ($class, @args) = @_;
 
   my $self = bless {}, $class;
@@ -28,11 +29,12 @@ sub run {
     'member=s',      # member to extract (or second arg on command line)
   ;
 
-  # other syntax : archive name and member name on command line without options
+  # other syntax : archive name and member name from command line without options
   $self->{archive} //= shift @args  or die "unspecified ZIP archive";
   $self->{member}  //= shift @args  or die "unspecified member to extract from $self->{zip}";
+  !@args                            or die "don't undestand these args: ", join(", ", @args);
 
-  # defaults and consistency check
+  # default flags and consistency check
   !($self->{zip} && $self->{unzip})    or die "options -zip and -unzip are mutually exclusive";
   $self->{unzip} //= 1 unless $self->{zip};
 
@@ -53,7 +55,7 @@ sub run {
 sub extract {
   my ($self) = @_;
 
-  # get contents
+  # get member contents
   my $contents = $self->{zipper}->contents($self->{member})
     or die "no member named '$self->{member}' in $self->{archive}";
 
@@ -72,7 +74,7 @@ sub extract {
 sub replace {
   my ($self) = @_;
 
-  # slurp file contents
+  # slurp contents from file relative to current directory
   local $/;
   open my $fh, "<:raw", $self->{member} or die "open $self->{member}: $!";
   my $contents = <$fh>;
@@ -84,7 +86,7 @@ sub replace {
     $contents = $dom->toString(XML_NO_INDENT);
   }
 
-  # replace member in archive
+  # replace member in archive and save
   my $zipper = $self->{zipper};
   $zipper->removeMember($self->{member});
   $zipper->addString($contents, $self->{member});
@@ -100,7 +102,7 @@ __END__
 
 =head1 NAME
 
-App::Zip::X - Extract a single member of a ZIP archive, indent the XML, and print it on STDOUT
+App::Zip::X - Simple zip/unzip utility with extra indentation features for XML members
 
 =head1 VERSION
 

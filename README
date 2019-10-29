@@ -1,8 +1,6 @@
 App-Zip-X
 
-This is a command-line utility to extract a member from a zip file (and optionally indent the XML).
-Meant to be used from Emacs for inspecting MsOffice files.
-
+Simple zip/unzip utility with extra indentation features for XML members
 
 INSTALLATION
 
@@ -22,8 +20,8 @@ perldoc command.
 
 You can also look for information at:
 
-    Search CPAN
-        https://metacpan.org/release/App-Zip-X
+    Search METACPAN
+        https://metacpan.org/pod/distribution/App-Zip-X/bin/zip-x
 
 
 LICENSE AND COPYRIGHT
