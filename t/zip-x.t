@@ -16,7 +16,7 @@ diag( "Testing App::Zip::X $App::Zip::X::VERSION, Perl $], $^X" );
 close STDOUT;
 open STDOUT, ">", \my $capture_stdout
   or die "could not redirect STDOUT: $!" ;
-App::Zip::X->run("-x", -zip => $docx, -member => "word/document.xml");
+App::Zip::X->run("-xml", -archive => $docx, -member => "word/document.xml");
 
 
 # just 3 very simple tests

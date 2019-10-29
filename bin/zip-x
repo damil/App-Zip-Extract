@@ -2,10 +2,8 @@
 
 use warnings;
 use strict;
-
-use lib "../lib";
-
 use App::Zip::X;
+
 App::Zip::X->run(@ARGV);
 
 
