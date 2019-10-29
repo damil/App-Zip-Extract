@@ -44,8 +44,7 @@ variable C<archive-zip-extract>. Adding the C<-x> option is highly recommanded.
 
 =head1 AUTHOR
 
-
-
+DAMI, C<< <dami at cpan.org> >>
 
 =cut
 
