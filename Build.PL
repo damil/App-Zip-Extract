@@ -14,7 +14,7 @@ my $builder = Module::Build->new(
         'Module::Build' => '0.4004',
     },
     test_requires => {
-        perl         => '5.8.0', # for open my $fh, ">", \my $string
+        perl         => '5.10.0', # for //= operator
         'Test::More' => '0',
     },
     requires => {
