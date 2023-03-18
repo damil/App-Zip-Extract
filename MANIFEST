@@ -9,3 +9,5 @@ t/etc/zip-x.docx
 t/zip-x.t
 xt/manifest.t
 xt/pod.t
+META.yml
+META.json
